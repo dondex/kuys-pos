@@ -7,7 +7,7 @@
               <div
                 class="card p-1"
                 style="width: 15rem; height: 100%;"
-                :style="{ backgroundColor: table.selected ? 'green' : '' }"
+
                 @click="selectTable(table.id)"
               >
                 <div class="card-body">
@@ -20,8 +20,14 @@
           </div>
         </div>
       </div>
+
+      <div v-if="selectedTable" class="mt-3">
+        <p>Selected Table: {{ selectedTable.id }}</p>
+        <p>Status: {{ selectedTable.selected ? 'Selected' : 'Vacant' }}</p>
+      </div>
     </div>
   </template>
+
 
   <script>
   export default {
@@ -55,17 +61,19 @@
       };
     },
     methods: {
-      selectTable(tableId) {
-        // Set the selected property for the selected table to true
-        // and set the selected property for other tables to false
-        this.tables.forEach(table => {
-          table.selected = table.id === tableId;
-        });
+    selectTable(tableId) {
+      // Set the selected property for the selected table to true
+      // and set the selected property for other tables to false
+      this.tables.forEach(table => {
+        table.selected = table.id === tableId;
+      });
 
-        // Set the selectedTableId prop to the selected table ID
-        this.$emit("select-table", tableId);
-      }
-    }
+      // Set the selectedTableId prop to the selected table ID
+      this.$emit("select-table", tableId);
+    },
+
+
+  }
   };
   </script>
 

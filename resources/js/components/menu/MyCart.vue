@@ -132,7 +132,8 @@ export default {
             receive: 0,
             change: 0,
             statusSelected: false,
-            currentStatus: null
+            currentStatus: null,
+            tableNumber: null
         };
     },
     computed: {
@@ -187,7 +188,12 @@ export default {
             this.statusSelected = true
         // add other necessary code here
         }
-    }
+    },
+
+    mounted() {
+        const tableId = this.$route.params.tableId;
+        this.tableNumber = tableId;
+    },
 
 };
 

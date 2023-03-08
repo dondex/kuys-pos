@@ -6,6 +6,7 @@ import Table from "../pages/Table.vue";
 import AddMenu from "../pages/Menu/AddMenu.vue";
 import MenuList from "../pages/Menu/MenuList.vue";
 import Sales from "../pages/Sales.vue";
+import Kitchen from "../pages/Kitchen.vue";
 import Reservation from "../pages/Reservation.vue";
 import CreateCategories from "../pages/categories/CreateCategories.vue";
 import EditCategories from "../pages/categories/EditCategories.vue";
@@ -24,6 +25,12 @@ const routes = [
         path: "/table",
         name: "Table",
         component: Table,
+        meta: { requiresAuth: true },
+    },
+    {
+        path: "/kitchen",
+        name: "Kitchen",
+        component: Kitchen,
         meta: { requiresAuth: true },
     },
     {

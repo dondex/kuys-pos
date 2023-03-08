@@ -10,6 +10,13 @@
                         </router-link>
                     </li>
 
+                    <li class="sidebar-item" v-if="loggedIn">
+                        <router-link class="sidebar-link" :to="{name: 'Kitchen'}">
+                            <i class="align-middle" data-feather="zap"></i>
+                            <span class="align-middle">Kitchen</span>
+                        </router-link>
+                    </li>
+
                     <li class="sidebar-item ">
                         <router-link class="sidebar-link" v-if="loggedIn" :to="{name: 'MenuList'}">
                             <i class="align-middle" data-feather="folder"></i>
