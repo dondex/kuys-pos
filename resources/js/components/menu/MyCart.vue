@@ -191,9 +191,9 @@ export default {
     },
 
     mounted() {
-        const tableId = this.$route.params.tableId;
-        this.tableNumber = tableId;
-    },
+    const tableId = this.$route.params.tableId;
+    this.tableNumber = tableId;
+  },
 
 };
 

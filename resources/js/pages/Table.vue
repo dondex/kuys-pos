@@ -60,20 +60,24 @@
         ]
       };
     },
-    methods: {
-    selectTable(tableId) {
-      // Set the selected property for the selected table to true
-      // and set the selected property for other tables to false
-      this.tables.forEach(table => {
-        table.selected = table.id === tableId;
-      });
+        methods: {
+            selectTable(tableId) {
+                // Set the selected property for the selected table to true
+                // and set the selected property for other tables to false
+                this.tables.forEach(table => {
+                table.selected = table.id === tableId;
+                });
 
-      // Set the selectedTableId prop to the selected table ID
-      this.$emit("select-table", tableId);
-    },
-
-
-  }
+                // Set the selectedTableId prop to the selected table ID
+                this.$emit("select-table", tableId);
+            }
+        },
+        computed: {
+        selectedTable() {
+            // Find the selected table in the tables array and return it
+            return this.tables.find(table => table.selected);
+        }
+    }
   };
   </script>
 
